@@ -3,11 +3,11 @@ package br.com.fecaf.model;
 import java.util.Scanner;
 
 public class Circulo {
-    public double raio, area, perimetro, diametro;
+    public double raio, area, perimetro;
 
-    Scanner scanner = new Scanner(System.in)
+    Scanner scanner = new Scanner(System.in);
 
-    public void cadastrarCirculo(){
+    public boolean cadastrarCirculo(){
         System.out.println("/***********************/");
         System.out.println(" Cadastrar Circulo ");
         System.out.println("/***********************/");
@@ -15,6 +15,7 @@ public class Circulo {
         raio = scanner.nextDouble();
         System.out.println("Circulo cadastrado com sucesso!");
         System.out.println("/************************/");
+        return true;
     }
 
     public void calcularArea(){

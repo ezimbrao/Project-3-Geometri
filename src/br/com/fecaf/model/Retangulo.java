@@ -21,7 +21,7 @@ public class Retangulo {
         lado2 = scanner.nextDouble();
         System.out.println("Retangulo cadastrado com sucesso !");
         System.out.println("/***********************/");
-        return false;
+        return true;
     }
 
     public void calcularArea(){
@@ -56,7 +56,7 @@ public class Retangulo {
     public boolean validarQuadrado (){
         if (lado1 == lado2){
             System.out.println("É um quadrado");
-            return true
+            return true;
         } else{
             System.out.println("Não é um quadrado");
             return false;

@@ -5,53 +5,79 @@ import java.util.Scanner;
 public class Triangulo {
 
     //atributos
-    public double lado1, lado2, area, perimetro;
+    public double base, lado1, lado2, b, h, p, altura, area, perimetro;
 
-    //Importa o scanner//
     Scanner scanner = new Scanner(System.in);
 
-    /*** Metodo para cadastrar Retangulo ***/
-    public void cadastrarRetangulo() {
-        System.out.println("/***********************/");
-        System.out.println("/* Cadastro Retangulo */");
-        System.out.println("/***********************/");
-        System.out.println("/* Informe o lado 1: */");
+    public boolean cadastrarTriangulo(){
+        System.out.println("/**********************/");
+        System.out.println("/*      Triangulo     */");
+        System.out.println("/**********************/");
+        System.out.println("Informe a Base do Triangulo: ");
+        base = scanner.nextDouble();
+        System.out.println("Informe o lado 1: ");
         lado1 = scanner.nextDouble();
-        System.out.println("/* Informe o lado 2: */");
+        System.out.println("Informe o Lado 2: ");
         lado2 = scanner.nextDouble();
-        System.out.println("Retanguo cadastrado com sucesso !");
-        System.out.println("/*************************");
+        System.out.println("Informe a altura do Triangulo");
+        altura = scanner.nextDouble();
+        System.out.println("Triangulo Cadastrado com sucesso!!");
 
+        return true;
     }
 
-    public void CalularArea(){
-        System.out.println("/********************************");
-        System.out.println(" Calculando Area ");
-        System.out.println("/********************************/");
 
-        area = lado1 * lado2;
+    public void calcularArea(){
+        System.out.println("Calculando area");
+
+        area = (base * altura)/2;
         System.out.println("A Area é: " + area);
-        System.out.println("/********************************/");
+
     }
 
-    public void CalcularPerimetro(){
-        System.out.println("/*****************************/");
-        System.out.println(" Calcular Perimetro ");
-        System.out.println("/*****************************/");
+    public void calcularPerimetro(){
+        System.out.println("Calculando Perimetro");
 
-        perimetro = (2 * lado1) + (2 * lado2);
-
+        perimetro = base + lado1 + lado2;
         System.out.println("O Perimetro é: " + perimetro);
-        System.out.println("/*****************************/");
+
     }
 
-    public void exibirInromações(){
-        System.out.println("/*********************************/");
-        System.out.println(" Informações Retangulo ");
-        System.out.println("O lado 1 é: " + lado1);
-        System.out.println("O lado 2 è: " + lado2);
-        System.out.println("A Area é: " + area);
-        System.out.println("O Perimetro é: " + perimetro);
-        System.out.println("/*********************************/");
+    public void definirTipo(){
+        System.out.println("Definir tipo");
+
+        //Equilatero - Isosceles - Escaleno
+
+        if(base == lado1 && base == lado2){
+            System.out.println("Esse triangulo é equilatero");
+
+        } else if (base != lado1 && base != lado2 && lado1 != lado2){
+            System.out.println("Este triangulo é escaleno");
+
+        } else {
+            System.out.println("Este triangulo é Isosceles");
+        }
+
+    }
+    public void ValidarTrianguloRetangulo(){ //cadastra o triangulo com os dados
+        System.out.println("/***********************/");
+        System.out.println("/* Triangulo Retangulo */");
+        System.out.println("/***********************/");
+        System.out.println("Informe a Base do Triangulo: ");
+        b = scanner.nextDouble();
+        System.out.println("Informe o Perpendicular do Triangulo (oposto à base): ");
+        p = scanner.nextDouble();
+        System.out.println("Informe a Hipotenusa (a maior reta): ");
+        h = scanner.nextDouble();
+        System.out.println("Triangulo Cadastrado com sucesso!!");
+        //recebe os dados de acordo com as partes do triangulo retangulo
+
+        if (h*h==(p*p)+(b*b)){// faz o calculo de pitagoras
+            System.out.println("É um triangulo retangulo");
+        }
+        else{
+            System.out.println("Não é um triangulo retangulo");
+            //diz se é ou não um triangulo retangulo
+        }
     }
 }
